@@ -59,7 +59,7 @@ export function CrearReceta(props) {
     const handleSubmit = function (e) {
         e.preventDefault();
         props.submit(input)
-        setRender('Your recipe has been added correctly!') //AGREGA ESTA STRING AL ESTADO Y LO RENDERIZA ANTES DEL BOTON SUBMIT
+        alert('Your recipe has been added correctly!') //AGREGA ESTA STRING AL ESTADO Y LO RENDERIZA ANTES DEL BOTON SUBMIT
         setInput({ //ESTO HACE QUE LUEGO DE TOCAR SUBMIT LOS CAMPOS SE VACÍEN
             title: '',
             summary: '',
@@ -133,9 +133,9 @@ export function CrearReceta(props) {
                     </div>
                     <br />
                     {/* ESTO SOLO MUESTRA EL MENSAJE DE QUE LA RECETA SE ENVIÓ CON ÉXITO */}
-                    {render[0] &&
+                    {/* {render[0] &&
                         <div>{render}</div>
-                    }
+                    } */}
 
 
 

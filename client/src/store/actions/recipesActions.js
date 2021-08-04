@@ -3,7 +3,7 @@ import axios from "axios";
 export function getRecipes(query) {
   return function (dispatch) {
     if (!query) {
-      return axios.get("http://localhost:3001/recipes").then((response) => {
+      return axios.get("/recipes").then((response) => {
         console.log("RESULTADO SIN QUERY", response.data.results);
         dispatch({
           type: "GET_RECIPES",
@@ -12,7 +12,7 @@ export function getRecipes(query) {
       });
     } else {
       return axios
-        .get("http://localhost:3001/recipes?query=" + query)
+        .get("/recipes?query=" + query)
         .then((response) => {
           console.log("RESULTADO CON QUERY", response.data);
           dispatch({
@@ -26,7 +26,7 @@ export function getRecipes(query) {
 
 export function getID(id) {
   return function (dispatch) {
-    return axios.get(`http://localhost:3001/recipes/` + id).then((response) => {
+    return axios.get(`/recipes/` + id).then((response) => {
       // console.log('RESULTADO DE ID', response.data.id)
       dispatch({
         type: "GET_ID",
@@ -38,7 +38,7 @@ export function getID(id) {
 
 export function getDiets() {
   return function (dispatch) {
-    return axios.get("http://localhost:3001/types").then((receta) => {
+    return axios.get("/types").then((receta) => {
       dispatch({ type: "GET_TYPES", payload: receta.data });
     });
   };
@@ -46,7 +46,7 @@ export function getDiets() {
 
 export function submit(input) {
   return function (dispatch) {
-    return fetch("http://localhost:3001/recipe", {
+    return fetch("/recipe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

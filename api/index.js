@@ -22,8 +22,8 @@ const { conn, Type } = require('./src/db.js');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('listening at port 3001');
+  server.listen(process.env.PORT, () => {
+    console.log('listening at port ' + process.env.PORT);
   
     let gluten = Type.findOrCreate({
       where: {
