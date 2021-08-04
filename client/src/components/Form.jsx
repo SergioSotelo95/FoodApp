@@ -30,7 +30,7 @@ export function CrearReceta(props) {
     });
 
     const [errors, setErrors] = useState({}); //ESTADO PARA LOS ERRORES
-    const [render, setRender] = useState(''); //ESTADO PARA EL MENSAJE DE ÉXITO AL CREAR RECETA
+    // const [render, setRender] = useState(''); //ESTADO PARA EL MENSAJE DE ÉXITO AL CREAR RECETA
 
     const handleInputChange = function (e) {
         //ESTA FUNCIÓN HACE QUE LAS PROPIEDADES TOMEN EL NOMBRE DEL INPUT 
